@@ -11,31 +11,35 @@
     </header>
     <main>
       <section class='left-container'>
-        <h1>New Activity</h1>
-        <form class="activity-form">
-          <p>Select a category:</p>
-          <div class="activity-buttons">
-            <button class="study-btn activity-btn"><img src="./assets/study.svg" alt="">Study</button>
-            <button class="meditate-btn activity-btn" type="button" value="Meditate"><img src="./assets/meditate.svg" alt="">Meditate</button>
-            <button class="exercise-btn activity-btn" type="button" value="Exercise"><img src="./assets/exercise.svg" alt="">Exercise</button>
-          </div>
-          <p>What would you like to acclomplish during this time?</p>
-          <input class='activity-input'type="text" value="">
-          <div class='min-sec'>
-            <div class="min">
-              <p>Minutes</p>
-              <input class='min-input' type="text" value="">
-            </div>
-            <div class="sec">
-              <p>Seconds</p>
-              <input class='sec-input' type="text" value="">
-            </div>
-            <input type="button" value="START AVTIVITY">
-          </div>
-        </form>
+        <div class="activity-content">
+          <p class='activity-titles'>New Activity</p>
+          <form class="activity-form">
+            <section class='form-content'>
+              <p class='select-title'>Select a category:</p>
+              <div class="activity-btns-container">
+                <button class="study-btn activity-btn"><img src="./assets/study.svg" alt="">Study</button>
+                <button class="meditate-btn activity-btn" type="button" value="Meditate"><img src="./assets/meditate.svg" alt="">Meditate</button>
+                <button class="exercise-btn activity-btn" type="button" value="Exercise"><img src="./assets/exercise.svg" alt="">Exercise</button>
+              </div>
+              <p class='input-title'>What would you like to acclomplish during this time?</p>
+              <input class='activity-input'type="text" value="">
+              <div class='min-sec'>
+                <div class="min">
+                  <p class='input-title'>Minutes</p>
+                  <input class='min-input' type="text" value="">
+                </div>
+                <div class="sec">
+                  <p class='input-title'>Seconds</p>
+                  <input class='sec-input' type="text" value="">
+                </div>
+                <input type="button" value="START ACTIVITY">
+              </div>
+            </section>
+          </form>
+        </div>
       </section>
       <section class='right-container'>
-        <h1>Past Activities</h1>
+        <p class='activity-titles'>Past Activities</p>
         <div class="card-container">
           <p>You haven't logged any activities yet.</p>
           <p>Complete the form to the left to get started!</p>
