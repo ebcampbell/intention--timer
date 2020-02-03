@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intention Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <p class='title'>INTENTION TIMER</p>
+    </header>
+    <main>
+      <section class='left-container'>
+        <h1>New Activity</h1>
+        <form class="activity-form">
+          <p>Select a category:</p>
+          <div class="activity-buttons">
+            <button class="study-btn activity-btn"><img src="./assets/study.svg" alt="">Study</button>
+            <button class="meditate-btn activity-btn" type="button" value="Meditate"><img src="./assets/meditate.svg" alt="">Meditate</button>
+            <button class="exercise-btn activity-btn" type="button" value="Exercise"><img src="./assets/exercise.svg" alt="">Exercise</button>
+          </div>
+          <p>What would you like to acclomplish during this time?</p>
+          <input class='activity-input'type="text" value="">
+          <div class='min-sec'>
+            <div class="min">
+              <p>Minutes</p>
+              <input class='min-input' type="text" value="">
+            </div>
+            <div class="sec">
+              <p>Seconds</p>
+              <input class='sec-input' type="text" value="">
+            </div>
+            <input type="button" value="START AVTIVITY">
+          </div>
+        </form>
+      </section>
+      <section class='right-container'>
+        <h1>Past Activities</h1>
+        <div class="card-container">
+          <p>You haven't logged any activities yet.</p>
+          <p>Complete the form to the left to get started!</p>
+          <!-- cards will populate here -->
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
