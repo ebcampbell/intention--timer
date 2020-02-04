@@ -76,14 +76,6 @@ main {
   padding: 2% 0;
 }
 
-/* .activity-btn {
-  color: white;
-  padding: 5%;
-  background: none;
-  width: 25%;
-  font-size: 1em;
-} */
-
 img {
   width: 28px;
 }
@@ -92,31 +84,49 @@ img {
   margin-top: 10%;
 }
 
+input:focus {
+  outline: none;
+}
+
+input[type=text] {
+  color: #CBC9CF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  margin-top: 3%;
+  padding-bottom: .2%;
+}
+
+input[type=number] {
+  color: #CBC9CF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  margin-top: 8%;
+  width: 100%;
+  padding-bottom: .2%;
+}
+
 .activity-input {
   background: none;
   border: none;
   border-bottom: 1px solid white;
-  width: 96%;
-  padding: 2%;
+  width: 100%;
 }
 
-.min-sec {
+.min-sec-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 7%;
 }
 
 .min,
 .sec {
   width: 40%;
-  margin-top: 5%;
 }
 
 .time-input {
   background: none;
   border: none;
   border-bottom: 1px solid white;
-  width: 90%;
-  padding: 5%;
 }
 
 .start-btn {
@@ -147,3 +157,15 @@ img {
   font-size: 1.5em;
   padding: 20px 30px 35px;
 }
+
+
+
+
+
+/* .activity-btn {
+  color: white;
+  padding: 5%;
+  background: none;
+  width: 25%;
+  font-size: 1em;
+} */
