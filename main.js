@@ -6,17 +6,26 @@ var studyImg = document.querySelector('#study-img');
 var meditateImg = document.querySelector('#meditate-img');
 var exerciseImg = document.querySelector('#exercise-img');
 
+btnContainer.addEventListener("click", clickHandler)
 
-studyBtn.addEventListener('click', changeStudyColor);
-meditateBtn.addEventListener('click', changeMeditateColor)
-exerciseBtn.addEventListener('click', changeExerciseColor)
+function clickHandler() {
+  console.log('meow');
+  if (event.target.classList.contains("study-btn")) {
+    changeStudyColor();
+  } else if (event.target.classList.contains("meditate-btn")) {
+    changeMeditateColor();
+  } else if (event.target.classList.contains("exercise-btn"))
+    changeExerciseColor()
+}
 
 function changeStudyColor() {
   studyBtn.classList.toggle('study-btn-activated');
   meditateBtn.classList.remove('meditate-btn-activated');
   exerciseBtn.classList.remove('exercise-btn-activated');
 
-  changeStudyImage()
+  studyImg.src = './assets/study-active.svg';
+  meditateImg.src = './assets/meditate.svg';
+  exerciseImg.src = './assets/exercise.svg';
 }
 
 function changeMeditateColor() {
@@ -24,37 +33,18 @@ function changeMeditateColor() {
   studyBtn.classList.remove('study-btn-activated');
   exerciseBtn.classList.remove('exercise-btn-activated');
 
-  changeMeditateImage()
+  meditateImg.src = './assets/meditate-active.svg'
+  studyImg.src = './assets/study.svg';
+  exerciseImg.src = './assets/exercise.svg';
 }
+
 
 function changeExerciseColor() {
   exerciseBtn.classList.toggle('exercise-btn-activated');
   studyBtn.classList.remove('study-btn-activated');
   meditateBtn.classList.remove('meditate-btn-activated');
 
-  changeExerciseImage()
-}
-
-
-function changeStudyImage() {
-  // var studyImg = document.querySelector('#study-img');
-  studyImg.src = './assets/study-active.svg';
-  meditateImg.src = './assets/meditate.svg';
-  exerciseImg.src = './assets/exercise.svg';
-}
-
-function changeMeditateImage() {
-  // var meditateImg = document.querySelector('#meditate-img');
-  meditateImg.src = './assets/meditate-active.svg'
-  studyImg.src = './assets/study.svg';
-  exerciseImg.src = './assets/exercise.svg';
-}
-
-function changeExerciseImage() {
-  // var exerciseImg = document.querySelector('#exercise-img');
-  // if the event.target is exerciseBtn change the img otherwise leave it white.
   exerciseImg.src = './assets/exercise-active.svg'
   studyImg.src = './assets/study.svg';
   meditateImg.src = './assets/meditate.svg';
-
 }
