@@ -5,11 +5,14 @@ var btnContainer = document.querySelector(".activity-btns-container")
 var studyImg = document.querySelector('#study-img');
 var meditateImg = document.querySelector('#meditate-img');
 var exerciseImg = document.querySelector('#exercise-img');
+var minInput = document.querySelector('.min-input');
+var secInput = document.querySelector('.sec-input');
+var timeContaner = document.querySelector('.min-sec-container');
 
-btnContainer.addEventListener("click", clickHandler)
+btnContainer.addEventListener('click', clickHandler)
+timeContaner.addEventListener('input', onlyNumbers)
 
 function clickHandler() {
-  console.log('meow');
   if (event.target.classList.contains("study-btn")) {
     changeStudyColor();
   } else if (event.target.classList.contains("meditate-btn")) {
@@ -47,4 +50,11 @@ function changeExerciseColor() {
   exerciseImg.src = './assets/exercise-active.svg'
   studyImg.src = './assets/study.svg';
   meditateImg.src = './assets/meditate.svg';
+}
+
+function onlyNumbers() {
+  if (minInput.value === '' && secInput.value === '') {
+    minInput.value = ''
+    secInput.value = '';
+  }
 }
