@@ -76,6 +76,21 @@ main {
   padding: 2% 0;
 }
 
+.study-btn-activated {
+  border: 1px solid #B3FD78;
+  color: #B3FD78;
+}
+
+.meditate-btn-activated {
+  border: 1px solid #C278FD;
+  color: #C278FD;
+}
+
+.exercise-btn-activated {
+  border: 1px solid #FD8078;
+  color: #FD8078;
+}
+
 img {
   width: 28px;
 }
