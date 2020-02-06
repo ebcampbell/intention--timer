@@ -16,7 +16,7 @@
           <div class="activity-form">
             <section class='form-content'>
               <p class='select-title'>Select a category:</p>
-              <div class="activity-btns-container">
+              <div class="activity-btns-container study-btn">
                 <div class="study-btn activity-btn">
                   <img id="study-img" src="./assets/study.svg" alt="study icon" >
                   <p>Study</p>
@@ -35,23 +35,25 @@
               </div>
               <p class='input-title'>What would you like to acclomplish during this time?</p>
               <input class='activity-input'type="text" value="">
-              <div class="activity-error-container">
-
+              <div class="activity-error-container error-divs" hidden>
+                <p class=>Activity is required</p>
               </div>
               <div class='min-sec-container'>
                 <div class="min">
                   <p class='input-title'>Minutes</p>
                   <input class='min-input time-input' type="number" min='0'>
                 </div>
-                <div class="min-error-container">
-
-                </div>
                 <div class="sec">
                   <p class='input-title'>Seconds</p>
                   <input class='sec-input time-input' type="number" min='0'>
                 </div>
-                <div class="sec-error-container">
-
+              </div>
+              <div class="time-error-msg-container">
+                <div class="min-error error-divs" hidden>
+                  <p>A number is required</p>
+                </div>
+                <div class="sec-error error-divs" hidden>
+                  <p>A number is required</p>
                 </div>
               </div>
               <button class='start-btn'>START ACTIVITY</button>
