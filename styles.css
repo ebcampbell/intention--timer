@@ -34,7 +34,7 @@ main {
 }
 
 .activity-form {
-  height: 80%;
+  height: 80vh;
 }
 
 .activity-content {
@@ -154,6 +154,26 @@ input[type=number] {
   width: 25%;
 }
 
+.error-divs {
+  /* border: 1px solid white; */
+  margin-top: 1%;
+  height: 1em;
+  color: #C278FD;
+
+}
+
+.time-error-msg-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.min-error,
+.sec-error {
+  width: 40%;
+}
+
+/* right container styles */
+
 .right-container {
   width: 35%
 }
@@ -171,6 +191,51 @@ input[type=number] {
 .past-activity-title {
   font-size: 1.5em;
   padding: 20px 30px 35px;
+}
+
+/* timer page */
+
+.timer-container {
+  width: 50%;
+  margin: auto;
+  margin-top: 1%;
+  text-align: center;
+  height: 60vh;
+}
+
+.timer-content {
+  margin: auto;
+  padding: 4%;
+  width: 75%;
+}
+
+.timer-title {
+  font-size: 1.5em;
+
+}
+
+.time {
+  font-size: 6em;
+}
+
+.timer-btn {
+  background: none;
+  border-radius: 50%;
+  border: 3px solid;
+  color: #CBC9CF;
+  font-size: 1.5em;
+  height: 250px;
+  margin-top: 5%;
+  width: 250px;
+}
+
+.log-activity-btn {
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  padding: 2%;
+  margin-top: 20%;
+  width: 70%;
 }
 
 

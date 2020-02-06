@@ -64,34 +64,63 @@ function onlyNumbers() {
   }
 }
 
-// create a function that checks all the inputs for a value when the button is clicked
-// if any of the values are empty an error will appear.
-
-
 function inputNotification() {
-  console.log('meow');
   var inputError = document.querySelector('.activity-error-container');
-  var minError = document.querySelector('.min-error-container');
-  var secError = document.querySelector('.sec-error-container');
+  var minError = document.querySelector('.min-error');
+  var secError = document.querySelector('.sec-error');
   if (activityInput.value === '') {
-    inputError.innerHTML += `<p>A discription is required.</p>`
+    inputError.removeAttribute('hidden')
   } else if (minInput.value === '') {
-    minError.innerHTML += `<p>A number is required.</p>`
+    minError.removeAttribute('hidden')
   } else if (secInput.value === '') {
-    secError.innerHTML += `<p>A number is required.</p>`
+    secError.removeAtribute('hidden')
   } else {
-    leftContainer.innerHTML =
-    `<div class="activity-content">
-          <p class="activity-title">Current Activity</p>
-          <div class="timer-container">
-            <p class="timer-title">Deep Breathing</p>
-            <div class="time">
-              <p>05:00</p>
-            </div>
-            <div>
-              <button class="timer-btn" type="button">START</button>
-            </div>
+        leftContainer.innerHTML = `
+        <div class="activity-content">
+          <p class='activity-title'>Current Activity</p>
+          <div class="activity-form">
+            <section class='timer-content'>
+              <div class="timer-container">
+                <p class="timer-title">Deep Breathing</p>
+                <div class="time">
+                  <p>05:00</p>
+                </div>
+                <button class="timer-btn" type="button">START</button>
+                <button class="log-activity-btn" type="button" hidden>LOG ACTIVITY</button>
+              </div>
+            </section>
           </div>
         </div>`
-  }
+      }
 }
+
+
+
+
+
+// function inputNotification() {
+//   var inputError = document.querySelector('.activity-error-container');
+//   var minError = document.querySelector('.min-error');
+//   var secError = document.querySelector('.sec-error');
+//   if (activityInput.value === '') {
+//     inputError.innerHTML = `<p>A discription is required.</p>`
+//   } else if (minInput.value === '') {
+//     minError.innerHTML = `<p>A number is required.</p>`
+//   } else if (secInput.value === '') {
+//     secError.innerHTML = `<p>A number is required.</p>`
+//   } else {
+//     leftContainer.innerHTML =
+//     `<div class="activity-content">
+//           <p class="activity-title">Current Activity</p>
+//           <div class="timer-container">
+//             <p class="timer-title">Deep Breathing</p>
+//             <div class="time">
+//               <p>05:00</p>
+//             </div>
+//             <div>
+//               <button class="timer-btn" type="button">START</button>
+//             </div>
+//           </div>
+//         </div>`
+//   }
+// }
