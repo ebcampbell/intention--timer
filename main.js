@@ -5,20 +5,25 @@ var btnContainer = document.querySelector(".activity-btns-container")
 var studyImg = document.querySelector('#study-img');
 var meditateImg = document.querySelector('#meditate-img');
 var exerciseImg = document.querySelector('#exercise-img');
+var activityInput = document.querySelector('.activity-input');
 var minInput = document.querySelector('.min-input');
 var secInput = document.querySelector('.sec-input');
 var timeContaner = document.querySelector('.min-sec-container');
+var startBtn = document.querySelector('.start-btn');
+var leftContainer = document.querySelector('.left-container');
 
-btnContainer.addEventListener('click', clickHandler)
-timeContaner.addEventListener('input', onlyNumbers)
+btnContainer.addEventListener('click', clickHandler);
+timeContaner.addEventListener('input', onlyNumbers);
+startBtn.addEventListener('click', inputNotification);
 
 function clickHandler() {
   if (event.target.classList.contains("study-btn")) {
     changeStudyColor();
   } else if (event.target.classList.contains("meditate-btn")) {
     changeMeditateColor();
-  } else if (event.target.classList.contains("exercise-btn"))
-    changeExerciseColor()
+  } else if (event.target.classList.contains("exercise-btn")) {
+    changeExerciseColor();
+  }
 }
 
 function changeStudyColor() {
@@ -56,5 +61,37 @@ function onlyNumbers() {
   if (minInput.value === '' && secInput.value === '') {
     minInput.value = ''
     secInput.value = '';
+  }
+}
+
+// create a function that checks all the inputs for a value when the button is clicked
+// if any of the values are empty an error will appear.
+
+
+function inputNotification() {
+  console.log('meow');
+  var inputError = document.querySelector('.activity-error-container');
+  var minError = document.querySelector('.min-error-container');
+  var secError = document.querySelector('.sec-error-container');
+  if (activityInput.value === '') {
+    inputError.innerHTML += `<p>A discription is required.</p>`
+  } else if (minInput.value === '') {
+    minError.innerHTML += `<p>A number is required.</p>`
+  } else if (secInput.value === '') {
+    secError.innerHTML += `<p>A number is required.</p>`
+  } else {
+    leftContainer.innerHTML =
+    `<div class="activity-content">
+          <p class="activity-title">Current Activity</p>
+          <div class="timer-container">
+            <p class="timer-title">Deep Breathing</p>
+            <div class="time">
+              <p>05:00</p>
+            </div>
+            <div>
+              <button class="timer-btn" type="button">START</button>
+            </div>
+          </div>
+        </div>`
   }
 }
