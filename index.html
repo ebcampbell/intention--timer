@@ -13,7 +13,7 @@
       <section class='left-container'>
         <div class="activity-content">
           <p class='activity-title'>New Activity</p>
-          <form class="activity-form">
+          <div class="activity-form">
             <section class='form-content'>
               <p class='select-title'>Select a category:</p>
               <div class="activity-btns-container">
@@ -29,12 +29,12 @@
                   <img id="exercise-img" src="./assets/exercise.svg" alt="exercise icon">
                   <p>Exercise</p>
                 </div>
-                <!-- <button class="study-btn activity-btn"><img src="./assets/study.svg" alt="">Study</button> -->
-                <!-- <button class="meditate-btn activity-btn"><img src="./assets/meditate.svg" alt="">Meditate</button>
-                <button class="exercise-btn activity-btn"><img src="./assets/exercise.svg" alt="">Exercise</button> -->
               </div>
               <p class='input-title'>What would you like to acclomplish during this time?</p>
               <input class='activity-input'type="text" value="">
+              <div class="activity-error-container error-divs">
+                <p class=>Activity is required</p>
+              </div>
               <div class='min-sec-container'>
                 <div class="min">
                   <p class='input-title'>Minutes</p>
@@ -45,9 +45,17 @@
                   <input class='sec-input time-input' type="number" min='0'>
                 </div>
               </div>
+              <div class="time-error-msg-container">
+                <div class="min-error error-divs">
+                  <p>A number is required</p>
+                </div>
+                <div class="sec-error error-divs">
+                  <p>A number is required</p>
+                </div>
+              </div>
               <button class='start-btn'>START ACTIVITY</button>
             </section>
-          </form>
+          </div>
         </div>
       </section>
       <section class='right-container'>
