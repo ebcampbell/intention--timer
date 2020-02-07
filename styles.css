@@ -159,7 +159,19 @@ input[type=number] {
   margin-top: 1%;
   height: 1em;
   color: #C278FD;
+  /* visibility: hidden; */
+}
 
+.activity-error-container {
+  visibility: hidden;
+}
+
+.min-error {
+  visibility: hidden;
+}
+
+.sec-error {
+  visibility: hidden;
 }
 
 .time-error-msg-container {

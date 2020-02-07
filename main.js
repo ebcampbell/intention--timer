@@ -14,7 +14,7 @@ var leftContainer = document.querySelector('.left-container');
 
 btnContainer.addEventListener('click', clickHandler);
 timeContaner.addEventListener('input', onlyNumbers);
-startBtn.addEventListener('click', inputNotification);
+startBtn.addEventListener('click', displayErrors);
 
 function clickHandler() {
   if (event.target.classList.contains("study-btn")) {
@@ -64,37 +64,44 @@ function onlyNumbers() {
   }
 }
 
-function inputNotification() {
-  var inputError = document.querySelector('.activity-error-container');
-  var minError = document.querySelector('.min-error');
-  var secError = document.querySelector('.sec-error');
+var inputError = document.querySelector('.activity-error-container');
+var minError = document.querySelector('.min-error');
+var secError = document.querySelector('.sec-error');
+
+
+function displayErrors() {
   if (activityInput.value === '') {
-    inputError.removeAttribute('hidden')
-  } else if (minInput.value === '') {
-    minError.removeAttribute('hidden')
-  } else if (secInput.value === '') {
-    secError.removeAtribute('hidden')
-  } else {
-        leftContainer.innerHTML = `
-        <div class="activity-content">
-          <p class='activity-title'>Current Activity</p>
-          <div class="activity-form">
-            <section class='timer-content'>
-              <div class="timer-container">
-                <p class="timer-title">Deep Breathing</p>
-                <div class="time">
-                  <p>05:00</p>
-                </div>
-                <button class="timer-btn" type="button">START</button>
-                <button class="log-activity-btn" type="button" hidden>LOG ACTIVITY</button>
-              </div>
-            </section>
-          </div>
-        </div>`
-      }
+    inputError.style.visibility = 'visible';
+  }
+  if (secInput.value === '') {
+    secError.style.visibility = 'visible';
+  }
+  if (minInput.value === '') {
+    minError.style.visibility = 'visible';
+  }
+  if (activityInput.value && minInput.value && secInput.value) {
+    displayTimer()
+  }
 }
 
-
+function displayTimer() {
+  leftContainer.innerHTML =
+  `<div class="activity-content">
+    <p class='activity-title'>Current Activity</p>
+    <div class="activity-form">
+      <section class='timer-content'>
+        <div class="timer-container">
+          <p class="timer-title">${activityInput.value}</p>
+          <div class="time">
+            <p><span>${minInput.value}:</span><span>${secInput.value}</span></p>
+          </div>
+          <button class="timer-btn" type="button">START</button>
+          <button class="log-activity-btn" type="button" hidden>LOG ACTIVITY</button>
+        </div>
+      </section>
+    </div>
+  </div>`
+}
 
 
 
@@ -103,24 +110,28 @@ function inputNotification() {
 //   var minError = document.querySelector('.min-error');
 //   var secError = document.querySelector('.sec-error');
 //   if (activityInput.value === '') {
-//     inputError.innerHTML = `<p>A discription is required.</p>`
+//     inputError.removeAttribute('hidden')
 //   } else if (minInput.value === '') {
-//     minError.innerHTML = `<p>A number is required.</p>`
+//     minError.removeAttribute('hidden')
 //   } else if (secInput.value === '') {
-//     secError.innerHTML = `<p>A number is required.</p>`
+//     secError.removeAtribute('hidden')
 //   } else {
-//     leftContainer.innerHTML =
-//     `<div class="activity-content">
-//           <p class="activity-title">Current Activity</p>
-//           <div class="timer-container">
-//             <p class="timer-title">Deep Breathing</p>
-//             <div class="time">
-//               <p>05:00</p>
-//             </div>
-//             <div>
-//               <button class="timer-btn" type="button">START</button>
-//             </div>
-//           </div>
-//         </div>`
-//   }
+//         leftContainer.innerHTML = `
+//         leftContainer.innerHTML = `
+// <div class="activity-content">
+//   <p class='activity-title'>Current Activity</p>
+//   <div class="activity-form">
+//     <section class='timer-content'>
+//       <div class="timer-container">
+//         <p class="timer-title">${activityInput.value}</p>
+//         <div class="time">
+//           <p><span>${minInput.value}:</span><span>${secInput.value}</span></p>
+//         </div>
+//         <button class="timer-btn" type="button">START</button>
+//         <button class="log-activity-btn" type="button" hidden>LOG ACTIVITY</button>
+//       </div>
+//     </section>
+//   </div>
+// </div>``
+//       }
 // }
